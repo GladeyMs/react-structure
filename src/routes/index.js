@@ -9,6 +9,8 @@ import { Layout } from '../Layout'
 import { ROUTE_PATH } from '../helpers'
 import { Homepage } from '../pages/Homepage'
 import { Report } from '../pages/Report'
+import { About } from '../pages/About'
+import { Login } from '../pages/Login'
 
 // const Homepage = lazy(() => import('../pages/Homepage'))
 
@@ -22,6 +24,22 @@ export const Routes = () => {
 						element={
 							<Suspense fallback={<></>}>
 								<Homepage />
+							</Suspense>
+						}
+					/>
+					<Route
+						path={`/login`}
+						element={
+							<Suspense fallback={<>loading...</>}>
+								<Login />
+							</Suspense>
+						}
+					/>
+					<Route
+						path={`/about`}
+						element={
+							<Suspense fallback={<>loading...</>}>
+								<About />
 							</Suspense>
 						}
 					/>
